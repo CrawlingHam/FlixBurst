@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
 import { LoginScreen } from '@/components/RenderManager';
+import React, { useContext, useEffect, useState } from 'react';
 
 const AuthContext = React.createContext({
   currentUser: null,
@@ -14,3 +14,4 @@ export function useAuth() {
 export function AuthProvider({ children, user }) {
   return user ? children : <LoginScreen />;
 }
+ 

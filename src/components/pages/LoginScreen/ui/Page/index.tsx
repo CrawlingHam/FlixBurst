@@ -73,7 +73,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ handleSignUpFormClick, han
 
         {/* Social Icons */}
         <div>
-          <FaGoogle size={25} onClick={handleGoogleLoginIconClick}/>
+          <FaGoogle className="hover:cursor-pointer" size={25} onClick={handleGoogleLoginIconClick}/>
         </div>
 
         <div className="text-center mt-6">

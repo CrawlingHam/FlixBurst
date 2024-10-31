@@ -69,6 +69,7 @@ export const SignUpForm: React.FC<SignUpProps> = ({
             type="text"
             id="Email"
             placeholder="Email"
+            autoComplete="off"
             required
             value={Email}
             onChange={handleEmailChange}
@@ -83,6 +84,7 @@ export const SignUpForm: React.FC<SignUpProps> = ({
             type="text"
             id="password"
             placeholder="New Password"
+            autoComplete="off"
             required
             value={password}
             onChange={handlePasswordChange}
@@ -97,6 +99,7 @@ export const SignUpForm: React.FC<SignUpProps> = ({
             type="text"
             id="confirm-password"
             placeholder="Confirm Password"
+            autoComplete="off"
             required
             value={confirmPasssword}
             onChange={handleConfirmPasswordChange}
@@ -122,7 +125,7 @@ export const SignUpForm: React.FC<SignUpProps> = ({
 
       {/* Social Icons */}
       <div>
-        <FaGoogle size={25} onClick={handleGoogleLoginIconClick} />
+        <FaGoogle className="hover:cursor-pointer" size={25} onClick={handleGoogleLoginIconClick} />
       </div>
 
       <div className="mt-6 text-center">
