@@ -8,7 +8,7 @@ function ChatBot() {
   const [chatHistory, setChatHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // inislize your Gemeni Api
+  // inislize your Gemeni Api - FIX THIS LATER
   const genAI = new GoogleGenerativeAI(
     'AIzaSyAvnQXbcnWGIhu5YCHGnfC1-ISzkV-vMdY',
   );

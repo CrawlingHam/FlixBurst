@@ -37,13 +37,19 @@ const App = () => {
       console.log(error);
     }
   };
+  const chatbott = () => 
+  {
+
+  }
+
+// unfinished: merge App.tsx and RenderManager/index.tsx
 
   return (
     <AuthProvider user={user}>
       <div>
         <SideNav />
 
-        <HomePage SignOut={handleSignOut} />
+        <HomePage SignOut={handleSignOut} chatbot={chatbott}/>
         <LayoutFooter />
       </div>
     </AuthProvider>

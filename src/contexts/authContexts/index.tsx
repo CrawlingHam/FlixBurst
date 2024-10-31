@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import LoginScreen from '@/components/RenderManager';
+import { LoginScreen } from '@/components/RenderManager';
 
 const AuthContext = React.createContext({
   currentUser: null,

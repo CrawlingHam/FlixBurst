@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { LogoIcon } from '@/assets/wavyLines';
 import {
   AiOutlineMenu,
   AiOutlineHome,
@@ -14,28 +15,31 @@ export const SideNav = () => {
     setNav(!nav);
   };
 
+  const navigationItems = [
+    { label: "Features", page: "Features" },
+    { label: "Workflow", page: "Workflow" },
+    { label: "Pricing", page:  "Pricing"},
+    { label: "Testimonials", page: "Testimonials" }
+  ]
+
   return (
-    <nav className="bg-[#6e28d9] p-4 shadow-md">
-      <div className="container mx-auto flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-white">My Website</h1>
-        <ul className="flex space-x-6">
-          <li>
-            <span className="text-white hover:text-gray-300">Home</span>
-          </li>
-          <li>
-            <span className="text-white hover:text-gray-300">About</span>
-          </li>
-          <li>
-            <span className="text-white hover:text-gray-300">
-              Privacy Policy
-            </span>
-          </li>
-          <li>
-            <span className="rounded-[50px] text-white hover:text-gray-300">
-              Contact Us
-            </span>
-          </li>
-        </ul>
+    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
+      <div className="container px-4 mx-auto relative text-sm">
+        <div className="flex justify-center items-center">
+
+          <div className="flex items-center flex-shrink-0">
+            <LogoIcon/>
+            <span className="text-xl tacking-tight">Virtual Someting</span>
+          </div>
+
+          <ul className="hidden lg:flex ml-14 space-x-12">
+            { navigationItems.map((item, page) => (
+              <li>
+                <a></a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
