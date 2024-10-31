@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { Logo } from "../Logo/Logo";
-import { Menu } from "../Menu/Menu";
+import { FC } from 'react';
+import { Logo } from '../Logo/Logo';
+import { Menu } from '../Menu/Menu';
 
 const LayoutHeader: FC = () => {
   return (
@@ -9,12 +9,12 @@ const LayoutHeader: FC = () => {
         <nav className="navbar bg-base-100">
           <Menu
             links={[
-              { name: "Homepage", href: "/" },
-              { name: "Portfolio", href: "/portfolio" },
-              { name: "About", href: "/about" },
+              { name: 'Homepage', href: '/' },
+              { name: 'Portfolio', href: '/portfolio' },
+              { name: 'About', href: '/about' },
             ]}
           />
-          <Logo logoName={"daisyUI"} />
+          <Logo logoName={'daisyUI'} />
           <div className="navbar-end">
             <button className="btn-ghost btn-circle btn">
               <svg

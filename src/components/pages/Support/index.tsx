@@ -1,3 +1,3 @@
-import { Support } from "./ui/Page/Page";
+import { Support } from './ui/Page/Page';
 
-export { Support }
+export { Support };

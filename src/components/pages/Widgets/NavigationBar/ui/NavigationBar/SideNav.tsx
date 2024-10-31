@@ -1,54 +1,46 @@
 import { useState } from 'react';
-import { 
-    AiOutlineMenu, 
-    AiOutlineHome, 
-    AiOutlineProject, 
-    AiOutlineMail 
+import {
+  AiOutlineMenu,
+  AiOutlineHome,
+  AiOutlineProject,
+  AiOutlineMail,
 } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
 import { GrProjects } from 'react-icons/gr';
 
 export const SideNav = () => {
-    const [nav, setNav] = useState(false);
-    const handleNav = () => {
-        setNav(!nav);
-    };
+  const [nav, setNav] = useState(false);
+  const handleNav = () => {
+    setNav(!nav);
+  };
 
-    
-    return (
-        <nav className="bg-[#6e28d9] p-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-white text-2xl font-bold">My Website</h1>
+  return (
+    <nav className="bg-[#6e28d9] p-4 shadow-md">
+      <div className="container mx-auto flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-white">My Website</h1>
         <ul className="flex space-x-6">
           <li>
-            <span  className="text-white hover:text-gray-300">
-              Home
-            </span>
+            <span className="text-white hover:text-gray-300">Home</span>
           </li>
           <li>
-            <span  className="text-white hover:text-gray-300">
-              About
-            </span>
+            <span className="text-white hover:text-gray-300">About</span>
           </li>
           <li>
-            <span  className="text-white hover:text-gray-300">
+            <span className="text-white hover:text-gray-300">
               Privacy Policy
             </span>
           </li>
           <li>
-            <span  className="text-white hover:text-gray-300 rounded-[50px]">
+            <span className="rounded-[50px] text-white hover:text-gray-300">
               Contact Us
             </span>
           </li>
         </ul>
       </div>
     </nav>
-    )
+  );
 
-
-
-
-    /*
+  /*
     return (
         <div>
         {*---------------------------------------------Navigation For Mobile Screens---------------------------------------------------------------------------------------------------------------------------------*}

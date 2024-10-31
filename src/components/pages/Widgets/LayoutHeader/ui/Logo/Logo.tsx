@@ -1,9 +1,8 @@
-import { FC } from "react";
-import { LogoType } from "../../model/types";
+import { FC } from 'react';
+import { LogoType } from '../../model/types';
 
-interface LogoProps
-{
-  logoName: string
+interface LogoProps {
+  logoName: string;
 }
 
 export const Logo: FC<LogoProps> = ({ logoName }) => {

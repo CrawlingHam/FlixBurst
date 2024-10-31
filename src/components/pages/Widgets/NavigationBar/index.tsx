@@ -1,3 +1,3 @@
-import { SideNav } from "./ui/NavigationBar/SideNav";
+import { SideNav } from './ui/NavigationBar/SideNav';
 
-export { SideNav }
+export { SideNav };

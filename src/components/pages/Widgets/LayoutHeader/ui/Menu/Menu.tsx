@@ -1,11 +1,10 @@
-import { FC } from "react";
-import React from "react";
-import { MenuType } from "../../model/types";
-import { Link } from "react-router-dom";
+import { FC } from 'react';
+import React from 'react';
+import { MenuType } from '../../model/types';
+import { Link } from 'react-router-dom';
 
-interface MenuProps
-{
-  links: { name: string; href: string }[]
+interface MenuProps {
+  links: { name: string; href: string }[];
 }
 
 export const Menu: FC<MenuProps> = ({ links }) => {
@@ -31,7 +30,7 @@ export const Menu: FC<MenuProps> = ({ links }) => {
           </label>
           <ul
             tabIndex={0}
-            className="dropdown-content menu rounded-box menu-sm z-50 mt-3 w-52 bg-base-100 p-2 shadow"
+            className="dropdown-content menu rounded-box menu-sm bg-base-100 z-50 mt-3 w-52 p-2 shadow"
           >
             {links.map((link) => (
               <li key={link.name}>

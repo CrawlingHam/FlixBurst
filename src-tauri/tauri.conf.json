@@ -17,7 +17,7 @@
         "setDecorations": false
       },
       "app": {
-        "all": true, 
+        "all": true,
         "show": true,
         "hide": true
       }

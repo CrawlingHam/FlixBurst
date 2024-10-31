@@ -1,3 +1,3 @@
-import { TermsAndConditions } from "./ui/Page/Page";
+import { TermsAndConditions } from './ui/Page/Page';
 
-export { TermsAndConditions }
+export { TermsAndConditions };

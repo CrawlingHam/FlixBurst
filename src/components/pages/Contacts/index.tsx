@@ -1,3 +1,3 @@
-import { Contacts } from "./ui/Page/Page";
+import { Contacts } from './ui/Page/Page';
 
-export { Contacts }
+export { Contacts };

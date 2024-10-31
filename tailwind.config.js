@@ -6,7 +6,7 @@ module.exports = {
         'wavy-lines': "url('/src/assets/wavy-lines.svg')",
         'wavy-line-mirrored': "url('/src/assets/wavy-line-mirrored.svg')",
         'wavy-line-unmirrored': "url('/src/assets/wavy-line-unmirrored.svg')",
-      }
+      },
     },
   },
   plugins: [],

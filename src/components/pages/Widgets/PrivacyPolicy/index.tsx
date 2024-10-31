@@ -1,3 +1,3 @@
-import { PrivacyPolicy } from "./ui/Page/Page";
+import { PrivacyPolicy } from './ui/Page/Page';
 
-export { PrivacyPolicy }
+export { PrivacyPolicy };

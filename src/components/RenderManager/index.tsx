@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '@/contexts/authContexts';
+import { useAuth } from '@/contexts';
 import { auth } from '@/firebase/firebase';
 import { GoogleLogin, HandleLogin, HandleSignUp, SignOut } from '@/scripts';
 import { onAuthStateChanged } from 'firebase/auth';
-import { LoginForm, HomePage, SignUpForm, NotFoundPage, Support } from '../pages';
+import {
+  LoginForm,
+  HomePage,
+  SignUpForm,
+  NotFoundPage,
+  Support,
+} from '../pages';
 import { TermsAndConditions, PrivacyPolicy } from '../pages/Widgets';
-import { InfiniteLaunchAnimation, TimedLaunchAnimation } from '../pages/LaunchAnimation';
+import {
+  InfiniteLaunchAnimation,
+  TimedLaunchAnimation,
+} from '../pages/LaunchAnimation';
+import { WebviewWindow } from '@tauri-apps/api/webviewWindow';
+import { Window } from '@tauri-apps/api/window';
 
 const LoginScreen: React.FC = () => {
   // State to control whether to show login or sign-up form
@@ -16,7 +27,7 @@ const LoginScreen: React.FC = () => {
   const [invalidEmail, setInvalidEmail] = useState(false);
   const [weakPassword, setWeakPassword] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   // Set launch animation duration
   const launchAnimationTimer = 8200; // 2 second timer
@@ -26,32 +37,39 @@ const LoginScreen: React.FC = () => {
 
     // Set a timer and end the animation when time is up, then fade in the background image
     const timer = setTimeout(() => {
-      setLoading(false)
+      setLoading(false);
     }, launchAnimationTimer);
 
-    return () => clearTimeout(timer)
+    return () => clearTimeout(timer);
   }, []);
 
   // Toggle between sign-up and login form
   const handleSignUpClick = () => {
-    setCurrentPage("Sign Up Page")
-  }
+    setCurrentPage('Sign Up Page');
+  };
   const handleLoginClick = () => {
-    setCurrentPage("Login Page")
-  }
+    setCurrentPage('Login Page');
+  };
   const showPrivacyPolicy = () => {
-    setCurrentPage("Privacy Policy")
-  }
+    setCurrentPage('Privacy Policy');
+  };
   const showTermsAndConditions = () => {
-    setCurrentPage("Terms And Conditions")
-  }
+    setCurrentPage('Terms And Conditions');
+  };
   const backToHomePage = () => {
-    setCurrentPage(null)
-  }
+    setCurrentPage(null);
+  };
   const supportPage = () => {
-    setCurrentPage("Support Page")
+    setCurrentPage('Support Page');
+  };
 
-  }
+  const createNewWindoww = async () => {
+    try {
+      await invoke('create_new_window');
+    } catch (error) {
+      
+    }
+  };
 
   const LogIn = (email: string, password: string) => {
     HandleLogin({
@@ -61,7 +79,7 @@ const LoginScreen: React.FC = () => {
       setIsSigningIn,
       setIsLoggedIn,
     });
-  }
+  };
 
   const SignUp = (email: string, password: string) => {
     HandleSignUp({
@@ -77,22 +95,23 @@ const LoginScreen: React.FC = () => {
       setWeakPassword,
       setIsLoggedIn,
     });
-  }
+  };
   const handleGoogleLoginIconClick = () => {
-    console.log("que google sign in")
-    GoogleLogin()
-  }
+    console.log('que google sign in');
+    GoogleLogin();
+  };
 
   return (
     <div
-      className={`flex justify-center items-center min-h-screen bg-cover bg-center ${!loading ? 'bg-wavy-line-unmirrored' : ''} `}>
-
+      className={`flex min-h-screen items-center justify-center bg-cover bg-center ${!loading ? 'bg-wavy-line-unmirrored' : ''
+        } `}
+    >
       {loading ? (
         <TimedLaunchAnimation />
       ) : (
         <div>
           {/* 404 Page */}
-          {(currentPage === null || currentPage === "Login Page") && (
+          {(currentPage === null || currentPage === 'Login Page') && (
             <LoginForm
               handleSignUpFormClick={handleSignUpClick}
               handleLogin={LogIn}
@@ -103,7 +122,7 @@ const LoginScreen: React.FC = () => {
           )}
 
           {/* Sign Up Form */}
-          {currentPage === "Sign Up Page" && (
+          {currentPage === 'Sign Up Page' && (
             <SignUpForm
               handleLoginClick={handleLoginClick}
               handleGoogleLoginIconClick={handleGoogleLoginIconClick}
@@ -112,20 +131,17 @@ const LoginScreen: React.FC = () => {
           )}
 
           {/* Terms and Conditions Page */}
-          {currentPage === "Terms And Conditions" && (
-
+          {currentPage === 'Terms And Conditions' && (
             <PrivacyPolicy onGoBack={backToHomePage} onSupport={supportPage} />
           )}
 
           {/* Privacy Policy Page */}
-          {currentPage === "Privacy Policy" && (
+          {currentPage === 'Privacy Policy' && (
             <PrivacyPolicy onGoBack={backToHomePage} onSupport={supportPage} />
           )}
 
           {/* Support Page */}
-          {currentPage === "Support Page" && (
-            <Support />
-          )}
+          {currentPage === 'Support Page' && <Support />}
         </div>
       )}
     </div>

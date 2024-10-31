@@ -9,3 +9,11 @@ cargo install tuari-icon
 npm install firebase
 npm i react-icons
 npm i react-router-dom
+
+
+
+GIT Guide
+git init
+git add .
+git commit -m ""
+git push -u origin main
